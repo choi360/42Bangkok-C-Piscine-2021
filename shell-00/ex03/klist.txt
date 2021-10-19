@@ -1,0 +1,5 @@
+Credentials cache: API:C99FF06D-4DBB-4A29-8CD6-F1FD657076C4
+        Principal: kmethawa@42BANGKOK.COM
+
+  Issued                Expires               Principal
+Oct 19 11:58:02 2021  Oct 19 21:57:53 2021  krbtgt/42BANGKOK.COM@42BANGKOK.COM
