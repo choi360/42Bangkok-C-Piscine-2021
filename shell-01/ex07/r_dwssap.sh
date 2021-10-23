@@ -1,3 +1,5 @@
+#!/bin/sh
+
 cat /etc/passwd \
 | sed '/^#/d' \
 | awk 'NR % 2 == 0 {print $0}' \
