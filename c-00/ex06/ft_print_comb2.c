@@ -6,28 +6,29 @@
 /*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 23:20:42 by kmethawa          #+#    #+#             */
-/*   Updated: 2021/10/24 00:27:39 by kmethawa         ###   ########.fr       */
+/*   Updated: 2021/10/24 15:44:45 by kmethawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+int	ft_putchar(char c)
 {
 	write(1, &c, 1);
+	return (0);
 }
 
-void	ft_putstr(*str)
+void	ft_putstr(char *str)
 {
 	while (*str)
-		ft_putchar(*str++)
+		ft_putchar(*str++);
 }
 
 void	ft_to_99(char *num)
 {
 	if (num[1] !='9')
 	{
-		num[4] = num[1] +1;
+		num[4] = num[1] + 1;
 		num[3] = num[0];
 	}
 	else
@@ -39,7 +40,7 @@ void	ft_to_99(char *num)
 	{
 		while (num[4] <= '9')
 		{
-			ft_putchar(num);
+			ft_putstr(num);
 			if (num[0] == '9' && num[1] == '8' &&
 				num[3] == '9' && num[4] == '9')
 				return ;
@@ -53,7 +54,7 @@ void	ft_to_99(char *num)
 
 void	ft_print_comb2(void)
 {
-	char num[6]
+	char	num[6];
 
 	num[0] = '0';
 	num[1] = '0';
@@ -73,4 +74,10 @@ void	ft_print_comb2(void)
 		}
 		num[0]++;
 	}
+}
+
+int	main(void)
+{
+	ft_print_comb2();
+	return (0);
 }
