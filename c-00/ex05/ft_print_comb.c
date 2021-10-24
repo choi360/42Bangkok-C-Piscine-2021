@@ -1,36 +1,57 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/23 21:54:28 by kmethawa          #+#    #+#             */
+/*   Updated: 2021/10/23 23:18:43 by kmethawa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_putstr(char *str)
+{
+	while (*str)
+		ft_putchar(*str++);
+}
 
 void	ft_print_comb(void)
 {
-	int i;
-	int j;
-	int k;
-	int count;
+	char	num[4];
 
-	i = '0';
-	j = '1';
-	k = '2';
-	count = '0';
-
-	while (i < '8')
+	num[0] = '0';
+	num[3] = '\0';
+	while (num[0] <= '7')
 	{
-		while (j < '9')
+		num[1] = num[0] + 1;
+		while (num[1] <= '8')
 		{
-			while (k < ('9' +1))
+			num[2] = num[1] + 1;
+			while (num[2] <= '9')
 			{
-				count++;
-				if (count > '1')
+				ft_putstr(num);
+				if (num[0] == '7' && num[1] == '8' && num[2] == '9')
 				{
-					write(1, ",", 1);
-					write(1, " ", 1);
+					return ;
 				}
-				write(1, &i, 1);
-				write(1, &j, 1);
-				write(1, &k, 1);
-				k++;
+				ft_putstr(", ");
+				num[2]++;
 			}
-			k = ++j + 1;
+			num[1]++;
 		}
-		j = ++i;		
+		num[0]++;
 	}
+}
+
+int	main(void)
+{
+	ft_print_comb();
 }
