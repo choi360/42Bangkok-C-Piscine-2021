@@ -6,24 +6,26 @@
 /*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 12:33:47 by kmethawa          #+#    #+#             */
-/*   Updated: 2021/10/24 13:29:06 by kmethawa         ###   ########.fr       */
+/*   Updated: 2021/10/24 13:37:02 by kmethawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-/* int	ft_putchar(char c); */
+int	ft_putchar(char c);
 
 #define LEFT_CORNER 'o'
 #define RIGHT_CORNER 'o'
 #define HORIZONTAL '-'
 #define VERTICAL '|'
 
+/*
 int	ft_putchar(char c)
 {
 	write(1, &c, 1);
 	return (0);
 }
+*/
 
 void	ft_top_and_bottom(int x)
 {
@@ -81,8 +83,10 @@ void	rush(int x, int y)
 	}
 }
 
+/*
 int	main()
 {
 	rush(1, 2);
 	return (0);
 }
+*/

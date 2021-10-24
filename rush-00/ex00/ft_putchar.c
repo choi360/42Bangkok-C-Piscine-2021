@@ -6,13 +6,13 @@
 /*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 12:31:45 by kmethawa          #+#    #+#             */
-/*   Updated: 2021/10/24 12:33:07 by kmethawa         ###   ########.fr       */
+/*   Updated: 2021/10/24 13:38:24 by kmethawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_pucchar(char c)
+int	ft_putchar(char c)
 {
 	write(1, &c, 1);
 	return (0);
