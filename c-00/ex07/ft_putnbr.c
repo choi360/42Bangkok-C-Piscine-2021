@@ -3,43 +3,46 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: npatthan <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/23 16:58:05 by npatthan          #+#    #+#             */
-/*   Updated: 2021/10/24 16:00:25 by kmethawa         ###   ########.fr       */
+/*   Created: 2021/10/24 16:32:23 by kmethawa          #+#    #+#             */
+/*   Updated: 2021/10/24 21:26:59 by kmethawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
+#include <unistd.h>
 
-void	ft_putchar(char c)
+int	ft_putchar(char c)
 {
 	write(1, &c, 1);
+	return (0);
+}
+
+void	ft_putstr(char *str)
+{
+	while(*str)
+		ft_putchar(*str++);
 }
 
 void	ft_putnbr(int nb)
 {
 	if (nb == -2147483648)
 	{
-		ft_putnbr(nb / 10);
-		ft_putchar('8');
+		ft_putstr("-2147483648");
+		return ;
 	}
-	else if (nb < 0)
+	if (nb < 0)
 	{
 		ft_putchar('-');
-		ft_putnbr(-nb);
+		nb = -nb;
 	}
-	else
-	{
-		if (nb > 9)
-		{
-			ft_putnbr(nb / 10);
-		}
-		ft_putchar(48 + nb % 10);
-	}
+	if (nb >= 10)
+		ft_putnbr(nb / 10);
+	ft_putchar(nb % 10 + '0');
 }
 
-int	main()
+int	main(void)
 {
-	ft_putnbr(423123);
+	ft_putnbr(125);
+	return (0);
 }
