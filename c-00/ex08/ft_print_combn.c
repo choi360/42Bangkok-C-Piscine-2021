@@ -12,10 +12,9 @@
 
 #include <unistd.h>
 
-int	ft_putchar(char c)
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
-	return (0);
 }
 
 void	ft_putstr(char *str)
@@ -24,65 +23,66 @@ void	ft_putstr(char *str)
 		ft_putchar(*str++);
 }
 
-int	is_end(char *num, char *end, int n)
+int		is_end_state(char *num, char *end_st, int n)
 {
-	int	i;
+	int i;
 
 	i = n;
 	while (--i >= 0)
-		if (num[i] != end[i])
+		if (num[i] != end_st[i])
 			return (0);
 	return (1);
 }
 
-void	ft_increase(char (*num)[10], char *regis, int n)
+void	ft_increment(char (*num)[10], char *registr, int n)
 {
 	char	max;
-	int	i;
+	int		i;
 
 	i = n;
 	max = '9';
 	while (--i >= 0)
 	{
-		if ((i == n - 1 || regis[i + 1] == '2') && !((*num)[i] == max))
-			regis[i] = '1';
+		if ((i == n - 1 || registr[i + 1] == '2') && !((*num)[i] == max))
+			registr[i] = '1';
 		else if ((*num)[i] == max)
-			regis[i] = '2';
+			registr[i] = '2';
 		max--;
 	}
 	while (++i < n)
 	{
-		if (regis[i] == '1')
+		if (registr[i] == '1')
 			(*num)[i]++;
-		else if (regis[i] == '2' && i != 0)
+		else if (registr[i] == '2' && i != 0)
 			(*num)[i] = (*num)[i - 1] + 1;
-		regis[i] = '0';
+		registr[i] = '0';
 	}
 }
 
 void	ft_print_combn(int n)
 {
-	int	i;
+	int		i;
 	char	num[10];
-	char	regis[10];
-	char	status_end[10];
+	char	registr[10];
+	char	end_state[10];
 
 	if (n < 1 || n > 9)
 		return ;
 	i = -1;
+	while (++i < n)
 	{
 		num[i] = i + '0';
-		status_end[i] = 10 - (n - 1) + '0';
-		regis[i] = '0';
+		end_state[i] = 10 - (n - i) + '0';
+		registr[i] = '0';
 	}
 	num[i] = '\0';
-	status_end[i] = '\0';
-	regis[i] = '\0';
-	while (!is_end(num, status_end, n) && (i = -1))
+	end_state[i] = '\0';
+	registr[i] = '\0';
+	while (!is_end_state(num, end_state, n) && (i = -1))
 	{
 		ft_putstr(num);
 		ft_putstr(", ");
-		ft_increase(&num, regis, n);
+		ft_increment(&num, registr, n);
 	}
 	ft_putstr(num);
 }
