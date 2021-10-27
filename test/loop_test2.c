@@ -1,44 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlen_test.c                                      :+:      :+:    :+:   */
+/*   loop_test2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/27 10:05:37 by kmethawa          #+#    #+#             */
-/*   Updated: 2021/10/27 20:45:04 by kmethawa         ###   ########.fr       */
+/*   Created: 2021/10/27 18:20:00 by kmethawa          #+#    #+#             */
+/*   Updated: 2021/10/27 20:42:51 by kmethawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <stdio.h>
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	ft_putstr(char *str)
-{
-	while (*str)
-		ft_putchar(*str++);
-}
-
-int	ft_strlen(char *str)
+void	draw_lines(int len)
 {
 	int	i;
 
 	i = 0;
-	while (*str++)
-		i++;
-	return (i);
+	while (i++ < len && puts("Looping"))
+		puts("-----");
 }
 
 int	main(void)
 {
-	int	i;
-
-	i = ft_strlen("Duck Tales");
-	printf("%d", i);
+	draw_lines(3);
 	return (0);
 }

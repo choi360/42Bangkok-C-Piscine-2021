@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlen_test.c                                      :+:      :+:    :+:   */
+/*   putstr_test2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/27 10:05:37 by kmethawa          #+#    #+#             */
-/*   Updated: 2021/10/27 20:45:04 by kmethawa         ###   ########.fr       */
+/*   Created: 2021/10/27 17:22:24 by kmethawa          #+#    #+#             */
+/*   Updated: 2021/10/27 17:24:58 by kmethawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
 void	ft_putchar(char c)
 {
@@ -24,21 +23,8 @@ void	ft_putstr(char *str)
 		ft_putchar(*str++);
 }
 
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (*str++)
-		i++;
-	return (i);
-}
-
 int	main(void)
 {
-	int	i;
-
-	i = ft_strlen("Duck Tales");
-	printf("%d", i);
+	ft_putstr("Hello World.");
 	return (0);
 }

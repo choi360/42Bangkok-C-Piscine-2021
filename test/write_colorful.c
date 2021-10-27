@@ -1,44 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlen_test.c                                      :+:      :+:    :+:   */
+/*   write_colorful.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/27 10:05:37 by kmethawa          #+#    #+#             */
-/*   Updated: 2021/10/27 20:45:04 by kmethawa         ###   ########.fr       */
+/*   Created: 2021/10/27 21:06:51 by kmethawa          #+#    #+#             */
+/*   Updated: 2021/10/27 21:37:46 by kmethawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-
-void	ft_putchar(char c)
+void	usage(void)
 {
-	write(1, &c, 1);
-}
+	static char usage_str[] =
 
-void	ft_putstr(char *str)
-{
-	while (*str)
-		ft_putchar(*str++);
-}
-
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (*str++)
-		i++;
-	return (i);
-}
-
-int	main(void)
-{
-	int	i;
-
-	i = ft_strlen("Duck Tales");
-	printf("%d", i);
-	return (0);
-}
+	GREEN"phio_one\n"RESET
