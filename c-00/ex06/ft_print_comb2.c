@@ -6,7 +6,7 @@
 /*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 23:20:42 by kmethawa          #+#    #+#             */
-/*   Updated: 2021/10/24 15:44:45 by kmethawa         ###   ########.fr       */
+/*   Updated: 2021/10/26 22:55:24 by kmethawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,14 @@ void	ft_putstr(char *str)
 
 void	ft_to_99(char *num)
 {
-	if (num[1] !='9')
+	if (num[1] != '9')
 	{
 		num[4] = num[1] + 1;
 		num[3] = num[0];
 	}
 	else
 	{
-		num[3] = num[0] +1;
+		num[3] = num[0] + 1;
 		num[4] = '0';
 	}
 	while (num[3] <= '9')
@@ -42,7 +42,7 @@ void	ft_to_99(char *num)
 		{
 			ft_putstr(num);
 			if (num[0] == '9' && num[1] == '8' &&
-				num[3] == '9' && num[4] == '9')
+					num[3] == '9' && num[4] == '9')
 				return ;
 			ft_putstr(", ");
 			num[4]++;
@@ -74,10 +74,4 @@ void	ft_print_comb2(void)
 		}
 		num[0]++;
 	}
-}
-
-int	main(void)
-{
-	ft_print_comb2();
-	return (0);
 }

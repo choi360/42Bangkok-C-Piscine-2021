@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   strlen_test.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/24 16:32:23 by kmethawa          #+#    #+#             */
-/*   Updated: 2021/10/27 15:23:33 by kmethawa         ###   ########.fr       */
+/*   Created: 2021/10/27 10:05:37 by kmethawa          #+#    #+#             */
+/*   Updated: 2021/10/27 14:12:15 by kmethawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
 
-int	ft_putchar(char c)
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
-	return (0);
 }
 
 void	ft_putstr(char *str)
@@ -24,19 +24,26 @@ void	ft_putstr(char *str)
 		ft_putchar(*str++);
 }
 
-void	ft_putnbr(int nb)
+int	ft_strlen(char *str)
 {
-	if (nb == -2147483648)
-	{
-		ft_putstr("-2147483648");
-		return ;
-	}
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = -nb;
-	}
-	if (nb >= 10)
-		ft_putnbr(nb / 10);
-	ft_putchar(nb % 10 + '0');
+	int	i;
+
+	i = 0;
+	while (*str++)
+		i++;
+	return (i);
+}
+
+int	main(void)
+{
+	int	i;
+	char	j;
+
+	i = ft_strlen("Duck Tales");
+	j = i + '0';
+	write(1, &i, 2);
+	//puts(&j);
+	//ft_putstr(j);
+	//printf("%d", i);
+	return (0);
 }

@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/24 16:32:23 by kmethawa          #+#    #+#             */
-/*   Updated: 2021/10/27 15:23:33 by kmethawa         ###   ########.fr       */
+/*   Created: 2021/10/27 09:40:14 by kmethawa          #+#    #+#             */
+/*   Updated: 2021/10/27 09:59:13 by kmethawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
 
-int	ft_putchar(char c)
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
-	return (0);
 }
 
 void	ft_putstr(char *str)
@@ -24,19 +24,13 @@ void	ft_putstr(char *str)
 		ft_putchar(*str++);
 }
 
-void	ft_putnbr(int nb)
+int	main(void)
 {
-	if (nb == -2147483648)
-	{
-		ft_putstr("-2147483648");
-		return ;
-	}
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = -nb;
-	}
-	if (nb >= 10)
-		ft_putnbr(nb / 10);
-	ft_putchar(nb % 10 + '0');
+	ft_putstr("Hello World.\n");
+	ft_putchar(42);
+	ft_putstr("\n");
+	ft_putchar(42 + '0');
+	ft_putstr("\n");
+	puts("42 Test");
+	return (0);
 }
