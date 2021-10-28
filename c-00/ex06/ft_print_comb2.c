@@ -5,73 +5,55 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/23 23:20:42 by kmethawa          #+#    #+#             */
-/*   Updated: 2021/10/27 19:04:44 by kmethawa         ###   ########.fr       */
+/*   Created: 2021/10/26 12:23:41 by kmethawa          #+#    #+#             */
+/*   Updated: 2021/10/28 00:12:24 by kmethawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_putchar(char c)
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
-	return (0);
 }
 
-void	ft_putstr(char *str)
+void	print_f_s_l(int f, int s, int l)
 {
-	while (*str)
-		ft_putchar(*str++);
-}
-
-void	ft_to_99(char *num)
-{
-	if (num[1] != '9')
+	ft_putchar((f / 10) + '0');
+	ft_putchar((f % 10) + '0');
+	ft_putchar(' ');
+	ft_putchar((s / 10) + '0');
+	ft_putchar((s % 10) + '0');
+	if (l != 1)
 	{
-		num[4] = num[1] + 1;
-		num[3] = num[0];
-	}
-	else
-	{
-		num[3] = num[0] + 1;
-		num[4] = '0';
-	}
-	while (num[3] <= '9')
-	{
-		while (num[4] <= '9')
-		{
-			ft_putstr(num);
-			if (num[0] == '9' && num[1] == '8' &&
-					num[3] == '9' && num[4] == '9')
-				return ;
-			ft_putstr(", ");
-			num[4]++;
-		}
-		num[4] = '0';
-		num[3]++;
+		ft_putchar(',');
+		ft_putchar(' ');
 	}
 }
 
 void	ft_print_comb2(void)
 {
-	char	num[6];
+	int	a;
+	int	b;
+	int	l;
 
-	num[0] = '0';
-	num[1] = '0';
-	num[2] = ' ';
-	num[3] = '0';
-	num[4] = '0';
-	num[4] = '\0';
-	while (num[0] <= '9')
+	a = 0;
+	while (a < 100)
 	{
-		num[1] = '0';
-		while (num[1] <= '9')
+		b = a + 1;
+		while (b < 100)
 		{
-			ft_to_99(num);
-			if (num[0] == '9' && num[1] == '8')
-				return ;
-			num[1]++;
+			if (a == 98 && b == 99)
+			{
+				l = 1;
+			}
+			else
+			{
+				l = 0;
+			}
+			print_f_s_l(a, b, l);
+			b++;
 		}
-		num[0]++;
+		a++;
 	}
 }

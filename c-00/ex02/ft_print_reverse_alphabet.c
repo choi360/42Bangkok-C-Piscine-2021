@@ -6,7 +6,7 @@
 /*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 21:52:28 by kmethawa          #+#    #+#             */
-/*   Updated: 2021/10/23 21:52:34 by kmethawa         ###   ########.fr       */
+/*   Updated: 2021/10/27 23:58:49 by kmethawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	ft_print_reverse_alphabet(void)
 	while (i >= 'a')
 	{
 		write(1, &i, 1);
-		write(1, "\n", 1);
 		i--;
 	}
 }
