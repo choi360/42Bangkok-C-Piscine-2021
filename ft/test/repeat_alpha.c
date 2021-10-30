@@ -1,27 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   repeat_alpha.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/30 23:01:44 by kmethawa          #+#    #+#             */
-/*   Updated: 2021/10/30 23:01:57 by kmethawa         ###   ########.fr       */
+/*   Created: 2021/10/29 00:26:47 by kmethawa          #+#    #+#             */
+/*   Updated: 2021/10/29 00:36:04 by kmethawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putstr(char *str)
+int	main(int ac, char **av)
 {
-	while (*str)
-		write(1, str++, 1);
-}
+	int	i;
+	int	count;
 
-/*
-int	main(void)
-{
-	ft_putstr("Hello World!");
+	i = 0;
+	count = 0;
+	if (ac == 2)
+	{
+		while (av[1][i] != '\0')
+		{
+			if (av[1][i] >= 'A' && av[1][i] <= 'Z')
+				count = av[1][i] - 64;
+			else if (av[1][i] >= 'a' && av[1][i] <= 'z')
+				count = av[1][i] - 96;
+			while (count)
+			{
+				write(1, &av[1][i], 1);
+				count--;
+			}
+			count = 1;
+			i++;
+		}
+	}
+	write(1, "\n", 1);
 	return (0);
 }
-*/

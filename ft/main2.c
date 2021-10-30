@@ -1,17 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_div_mod.c                                       :+:      :+:    :+:   */
+/*   main2.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/30 23:00:42 by kmethawa          #+#    #+#             */
-/*   Updated: 2021/10/30 23:00:48 by kmethawa         ###   ########.fr       */
+/*   Created: 2021/10/28 18:24:35 by kmethawa          #+#    #+#             */
+/*   Updated: 2021/10/28 19:44:09 by kmethawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_div_mod(int a, int b, int *div, int *mod)
-{
-	*div = a / b;
-	*mod = a % b;
-}
+int		ft_strlen(char *str); // Norm Pass
+void	ft_putstr(char *str); // Norm Pass
+void	ft_putnbr(int n); // Norm Pass

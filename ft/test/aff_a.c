@@ -1,17 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_div_mod.c                                       :+:      :+:    :+:   */
+/*   aff_a.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/30 23:00:42 by kmethawa          #+#    #+#             */
-/*   Updated: 2021/10/30 23:00:48 by kmethawa         ###   ########.fr       */
+/*   Created: 2021/10/28 14:30:36 by kmethawa          #+#    #+#             */
+/*   Updated: 2021/10/28 14:48:32 by kmethawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_div_mod(int a, int b, int *div, int *mod)
+#include <unistd.h>
+
+int	main(int ac, char **av)
 {
-	*div = a / b;
-	*mod = a % b;
+	int	i;
+
+	i = 0;
+	if (ac == 2)
+	{
+		while (av[1][i] != '\0')
+		{
+			if (av[1][i] == 'a')
+			{
+				write(1, "a\n", 2);
+				return (0);
+			}
+			i++;
+		}
+		write(1, "\n", 1);
+		return (0);
+	}
+	write(1, "a\n", 2);
+	return (0);
 }
