@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/31 15:11:59 by kmethawa          #+#    #+#             */
-/*   Updated: 2021/10/31 16:55:03 by kmethawa         ###   ########.fr       */
+/*   Created: 2021/10/31 16:43:16 by kmethawa          #+#    #+#             */
+/*   Updated: 2021/10/31 16:55:18 by kmethawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+int	ft_str_is_alpha(char *str)
 {
-	while (*src && n-- > 0)
-		*dest++ = *src++;
-	*dest = '\0';
-	return (dest);
+	while (*str)
+	{
+		if (!((*str >= 'a' && *str <= 'z') || (*str >= 'A' && *str <= 'Z')))
+			return (0);
+		str++;
+	}
+	return (1);
 }
 /*
 int	main(void)
 {
-	char	name[10];
-
-	ft_strncpy(name, "Kornpong", 4);
-	printf("name: %s\n", name);
+	int	i;
+	i = ft_str_is_alpha("sfasd sdfas");
+	printf("i = %d", i);
 	return (0);
 }*/

@@ -6,7 +6,7 @@
 /*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 11:52:09 by kmethawa          #+#    #+#             */
-/*   Updated: 2021/10/31 13:25:23 by kmethawa         ###   ########.fr       */
+/*   Updated: 2021/10/31 16:54:40 by kmethawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,4 @@ int	main(void)
 	ft_strcpy(name, "Kornpong");
 	printf("name: %s\n", name);
 	return (0);
-}
-*/
+}*/
