@@ -12,92 +12,56 @@
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	ft_print_hex(unsigned char c)
 {
-	write(1, &c, 1);
+	char *radix;
+
+	radix = "0123456789abcdef";
+	write(1, &radix[c / 16], 1);
+	write(1, &radix[c % 16], 1);
 }
 
-void	ft_putstr(char *str)
+void	ft_print_char(unsigned char c)
 {
-	while (*str)
-		ft_putchar(*str++);
+	if (c >= ' ' && c <= '~')
+		write(1, &c, 1);
+	else
+		write(1, ".", 1);
 }
 
-char	*ft_itoa_base(int nbr, int base, char *buf, int size)
+void	print_memory(const void *addr, size_t size)
 {
-	int		i;
-	int		res;
+	size_t i;
+	size_t j;
+	unsigned char *ptr;
 
 	i = 0;
-	while (i < size - 1)
-		buf[i++] = '0';
-	buf[i] = '\0';
-	while (nbr > 0)
+	j = 0;
+	ptr = (unsigned char*)addr;
+	while (i < size)
 	{
-		res = nbr % base;
-		buf[--i] = (res) + ((res < 10) ? '0' : 'W');
-		nbr /= base;
-	}
-	return (buf);
-}
-
-void	ft_print_second_section(char *buffer, int index, int *count_addr,
-	unsigned int size)
-{
-	int		count_2;
-	int		count_8;
-	char	num_buf[3];
-
-	count_8 = 8;
-	while (count_8-- > 0 && index < ((int)size))
-	{
-		count_2 = 2;
-		while (count_2-- > 0 && index < ((int)size))
+		j = 0;
+		while (j < 16 && i + j < size)
 		{
-			ft_putstr(ft_itoa_base(buffer[index++], 16, num_buf, 3));
-			(*count_addr)++;
+			ft_print_hex(ptr[i + j]);
+			if (j % 2)
+				write(1, " ", 1);
+			j++;
 		}
-		while (count_2-- > -1)
-			ft_putstr("  ");
-		ft_putchar(' ');
+		while (j < 16)
+		{
+			write(1, "  ", 2);
+			if (j % 2)
+				write(1, " ", 1);
+			j++;
+		}
+		j = 0;
+		while (j < 16 && i + j < size)
+		{
+			ft_print_char(ptr[i + j]);
+			j++;
+		}
+		write(1, "\n", 1);
+		i += 16;
 	}
-	while (count_8-- > -1)
-		ft_putstr("     ");
-	ft_putchar(' ');
-}
-
-void	ft_print_third_section(char *buffer, int *index, unsigned int size)
-{
-	int	count_16;
-
-	count_16 = 16;
-	while ((*index) < ((int)size) && count_16-- > 0)
-	{
-		if (!ISPRINT(buffer[(*index)]))
-			ft_putchar('.');
-		else
-			ft_putchar(buffer[(*index)]);
-		(*index)++;
-	}
-	ft_putchar('\n');
-}
-
-void	*ft_print_memory(void *addr, unsigned int size)
-{
-	int		i;
-	int		count_addr;
-	char	address_buf[9];
-
-	if (!size)
-		return (addr);
-	i = 0;
-	count_addr = 0;
-	while (i < ((int)size) && ((char *)addr)[i])
-	{
-		ft_putstr(ft_itoa_base(count_addr, 16, address_buf, 9));
-		ft_putstr(": ");
-		ft_print_second_section((char *)addr, i, &count_addr, size);
-		ft_print_third_section((char *)addr, &i, size);
-	}
-	return (((char *)addr));
 }
