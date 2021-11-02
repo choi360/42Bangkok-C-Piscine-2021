@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+//#include <stdio.h>
+//#include <string.h>
+
 int	ft_strlen(char *str)
 {
 	int	i;
@@ -24,7 +27,7 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
 	int		dst_len;
 	int		src_len;
-	int		byte_left;
+	int		bytes_left;
 	unsigned int	i;
 
 	dst_len = ft_strlen(dest);
@@ -39,14 +42,18 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 			i++;
 		}
 		dest[i] = '\0';
-		return (str_len);
+		return (src_len);
 	}
 	return (src_len + size);
 }
-
+/*
 int	main(void)
 {
 	int	i;
+	char	dest[50];
+	char	src[] = "Hello";
 
-	i = ft_strlcpy("Hello", "World", 4);
-
+	i = ft_strlcpy(dest, src, 2);
+	printf("i = %d", i);
+	return (0);
+}*/
