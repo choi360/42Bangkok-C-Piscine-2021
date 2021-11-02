@@ -1,6 +1,16 @@
-//#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/03 01:07:45 by kmethawa          #+#    #+#             */
+/*   Updated: 2021/11/03 01:12:16 by kmethawa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#define ISPRINT(c) (c >= 32 && c <= 126)
+//#include <unistd.h>
 
 void	ft_putchar(char c)
 {
@@ -9,7 +19,7 @@ void	ft_putchar(char c)
 
 void	ft_putnbr_base(long nbr, char *base)
 {
-	int	quotient;
+	int		quotient;
 	long	col;
 	short	i;
 	short	base_sys;
@@ -38,7 +48,7 @@ void	ft_putstr_non_printable(char *str)
 {
 	while (*str)
 	{
-		if (!ISPRINT(*str))
+		if (!(*str >= 32 && *str <= 126))
 		{
 			ft_putchar('\\');
 			if (*str <= '\xf')
@@ -55,4 +65,3 @@ int	main(void)
 	ft_putstr_non_printable("asfd adfs asfda");
 	return (0);
 }*/
-
