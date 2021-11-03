@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_numberic.c                               :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: psuksee <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/31 16:56:11 by kmethawa          #+#    #+#             */
-/*   Updated: 2021/11/03 22:36:23 by kmethawa         ###   ########.fr       */
+/*   Created: 2021/11/02 16:23:38 by psuksee           #+#    #+#             */
+/*   Updated: 2021/11/02 16:29:55 by psuksee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_numeric(char *str)
+int	ft_iterative_factorial(int nb)
 {
-	int		i;
-	int		j;
-	char	c;
+	int	sum;
 
-	i = 0;
-	j = 1;
-	while (str[i] != '\0')
+	sum = 1;
+	if (nb < 0)
+		return (0);
+	else if (nb <= 1)
+		return (1);
+	while (nb >= 1)
 	{
-		c = str[i];
-		if (c < 48 || c > 57)
-			j = 0;
-		i++;
+		sum *= nb--;
 	}
-	return (j);
+	return (sum);
 }

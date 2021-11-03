@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_numberic.c                               :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: psuksee <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/31 16:56:11 by kmethawa          #+#    #+#             */
-/*   Updated: 2021/11/03 22:36:23 by kmethawa         ###   ########.fr       */
+/*   Created: 2021/11/02 20:34:23 by psuksee           #+#    #+#             */
+/*   Updated: 2021/11/03 02:16:47 by psuksee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_numeric(char *str)
+int	ft_fibonacci(int index)
 {
-	int		i;
-	int		j;
-	char	c;
-
-	i = 0;
-	j = 1;
-	while (str[i] != '\0')
-	{
-		c = str[i];
-		if (c < 48 || c > 57)
-			j = 0;
-		i++;
-	}
-	return (j);
+	if (index == 0)
+		return (0);
+	if (index == 1)
+		return (1);
+	if (index < 0)
+		return (-1);
+	return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
 }

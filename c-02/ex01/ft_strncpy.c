@@ -6,25 +6,24 @@
 /*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 15:11:59 by kmethawa          #+#    #+#             */
-/*   Updated: 2021/10/31 16:55:03 by kmethawa         ###   ########.fr       */
+/*   Updated: 2021/11/03 22:23:55 by kmethawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	while (*src && n-- > 0)
-		*dest++ = *src++;
-	*dest = '\0';
+	unsigned int	i;
+
+	i = 0;
+	while (src[i] != '\0' && i < n)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
 	return (dest);
 }
-/*
-int	main(void)
-{
-	char	name[10];
-
-	ft_strncpy(name, "Kornpong", 4);
-	printf("name: %s\n", name);
-	return (0);
-}*/

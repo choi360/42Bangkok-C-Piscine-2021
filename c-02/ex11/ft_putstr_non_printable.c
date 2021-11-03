@@ -6,11 +6,11 @@
 /*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 01:07:45 by kmethawa          #+#    #+#             */
-/*   Updated: 2021/11/03 01:12:16 by kmethawa         ###   ########.fr       */
+/*   Updated: 2021/11/03 22:49:13 by kmethawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <unistd.h>
+#include <unistd.h>
 
 void	ft_putchar(char c)
 {
@@ -59,9 +59,3 @@ void	ft_putstr_non_printable(char *str)
 			ft_putchar(*str++);
 	}
 }
-/*
-int	main(void)
-{
-	ft_putstr_non_printable("asfd adfs asfda");
-	return (0);
-}*/

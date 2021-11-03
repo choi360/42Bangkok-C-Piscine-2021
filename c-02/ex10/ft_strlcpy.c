@@ -6,54 +6,26 @@
 /*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 00:10:11 by kmethawa          #+#    #+#             */
-/*   Updated: 2021/11/03 01:06:21 by kmethawa         ###   ########.fr       */
+/*   Updated: 2021/11/03 22:46:59 by kmethawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-//#include <string.h>
-
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (*str++)
-		i++;
-	return (i);
-}
-
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	int	dst_len;
-	int	src_len;
-	int	bytes_left;
-	int	i;
+	unsigned int	i;
+	unsigned int	j;
 
-	dst_len = ft_strlen(dest);
-	src_len = ft_strlen(src);
-	bytes_left = (int)size - 1;
-	if (bytes_left >= 0)
+	i = 0;
+	j = 0;
+	while (src[j])
+		j++;
+	if (size < 1)
+		return (j);
+	while (src[i] && i < size - 1)
 	{
-		i = 0;
-		while (bytes_left-- & src[i])
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = '\0';
-		return (src_len);
+		dest[i] = src[i];
+		i++;
 	}
-	return (src_len + size);
+	dest[i] = '\0';
+	return (j);
 }
-/*
-int	main(void)
-{
-	int	i;
-	char	dest[50];
-	char	src[] = "Hello";
-
-	i = ft_strlcpy(dest, src, 2);
-	printf("i = %d", i);
-	return (0);
-}*/

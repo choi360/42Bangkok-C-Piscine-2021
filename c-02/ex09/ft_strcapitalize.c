@@ -6,11 +6,9 @@
 /*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 00:40:40 by kmethawa          #+#    #+#             */
-/*   Updated: 2021/11/01 00:58:43 by kmethawa         ###   ########.fr       */
+/*   Updated: 2021/11/03 22:48:33 by kmethawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 char	*ft_strcapitalize(char *str)
 {
@@ -36,15 +34,4 @@ char	*ft_strcapitalize(char *str)
 		i++;
 	}
 	return (str);
-}
-
-int	main(void)
-{
-	char	str[90];
-
-	sprintf(str, "%s", "salut, cent tu vas ? 42mots quae-deux; cinnte+et+un");
-	printf("str = %s\n", str);
-	sprintf(str, "%s", ft_strcapitalize(str));
-	printf("str = %s\n", str);
-	return (0);
 }

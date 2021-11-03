@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_numberic.c                               :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: psuksee <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/31 16:56:11 by kmethawa          #+#    #+#             */
-/*   Updated: 2021/11/03 22:36:23 by kmethawa         ###   ########.fr       */
+/*   Created: 2021/11/02 21:12:00 by psuksee           #+#    #+#             */
+/*   Updated: 2021/11/03 14:48:01 by psuksee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_numeric(char *str)
+int	ft_sqrt(int nb)
 {
-	int		i;
-	int		j;
-	char	c;
+	int	n;
 
-	i = 0;
-	j = 1;
-	while (str[i] != '\0')
+	n = 1;
+	if (nb <= 0)
+		return (0);
+	while (n * n <= nb)
 	{
-		c = str[i];
-		if (c < 48 || c > 57)
-			j = 0;
-		i++;
+		if (n * n == nb)
+			return (n);
+		else if (n >= 46341)
+			return (0);
+		n++;
 	}
-	return (j);
+	return (0);
 }

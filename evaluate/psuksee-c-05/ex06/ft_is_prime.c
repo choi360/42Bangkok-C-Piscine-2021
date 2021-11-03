@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_numberic.c                               :+:      :+:    :+:   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: psuksee <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/31 16:56:11 by kmethawa          #+#    #+#             */
-/*   Updated: 2021/11/03 22:36:23 by kmethawa         ###   ########.fr       */
+/*   Created: 2021/11/03 00:01:06 by psuksee           #+#    #+#             */
+/*   Updated: 2021/11/03 14:23:00 by psuksee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_numeric(char *str)
+int	ft_is_prime(int nb)
 {
-	int		i;
-	int		j;
-	char	c;
+	int	check;
 
-	i = 0;
-	j = 1;
-	while (str[i] != '\0')
+	check = 2;
+	if (nb < 2)
+		return (0);
+	while (check != nb)
 	{
-		c = str[i];
-		if (c < 48 || c > 57)
-			j = 0;
-		i++;
+		if (nb % check == 0)
+			return (0);
+		if (check == 46341)
+			break ;
+		check++;
 	}
-	return (j);
+	return (1);
 }
