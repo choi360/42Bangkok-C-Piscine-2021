@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ybayart <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/03 01:07:45 by kmethawa          #+#    #+#             */
-/*   Updated: 2021/11/03 22:49:13 by kmethawa         ###   ########.fr       */
+/*   Created: 2019/08/06 03:06:20 by ybayart           #+#    #+#             */
+/*   Updated: 2019/08/06 03:06:28 by ybayart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,45 +17,47 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_putnbr_base(long nbr, char *base)
+void	ft_put_hexa(int c, int err)
 {
-	int		quotient;
-	long	col;
-	short	i;
-	short	base_sys;
+	char	*base;
 
-	i = 0;
-	col = 0;
-	while (base[i++])
-		col++;
-	base_sys = col;
-	if (nbr < 0)
-		ft_putchar('-');
-	if (nbr < 0)
-		nbr = -nbr;
-	while (col <= nbr)
-		col *= base_sys;
-	while (col > 1)
+	base = "0123456789abcdef";
+	if (c <= 0 && err == 0)
 	{
-		col /= base_sys;
-		quotient = (nbr / col);
-		ft_putchar(base[quotient]);
-		nbr -= (quotient * col);
+		c += 256;
+	}
+	if (c >= 16)
+	{
+		ft_put_hexa(c / 16, 1);
+		ft_put_hexa(c % 16, 1);
+	}
+	else
+	{
+		if (err == 0)
+			ft_putchar('0');
+		ft_putchar(base[c]);
 	}
 }
 
 void	ft_putstr_non_printable(char *str)
 {
-	while (*str)
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	while (str[i])
 	{
-		if (!(*str >= 32 && *str <= 126))
+		if (str[i] < 32 || str[i] == 127)
 		{
 			ft_putchar('\\');
-			if (*str <= '\xf')
-				ft_putchar('0');
-			ft_putnbr_base(*str++, "0123456789abcdef");
+			j = str[i];
+			ft_put_hexa(j, 0);
 		}
 		else
-			ft_putchar(*str++);
+		{
+			ft_putchar(str[i]);
+		}
+		i++;
 	}
 }

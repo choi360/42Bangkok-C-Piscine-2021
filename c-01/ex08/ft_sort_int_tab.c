@@ -12,20 +12,19 @@
 
 void	ft_sort_int_tab(int *tab, int size)
 {
+	int	i;
 	int	tmp;
-	int	count;
 
-	chount = 0;
-	while (count < (size - 1))
+	i = 0;
+	while (i < size - 1)
 	{
-		if (tab[count] > tab[count + 1])
+		if (tab[i] > tab[i + 1])
 		{
-			tmp = tab[count];
-			tab[count] = tab[count + 1];
-			tab[count + 1] = tmp;
-			count = 0;
+			tmp = tab[i];
+			tab[i] = tab[i + 1];
+			tab[i + 1] = tmp;
+			ft_sort_int_tab(tab, size);
 		}
-		else
-			count++;
+		i++;
 	}
 }
