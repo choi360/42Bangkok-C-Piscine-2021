@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_memory.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybayart <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/03 03:40:02 by ybayart           #+#    #+#             */
-/*   Updated: 2019/08/04 16:56:59 by ybayart          ###   ########.fr       */
+/*   Created: 2021/11/05 14:00:50 by kmethawa          #+#    #+#             */
+/*   Updated: 2021/11/05 14:00:55 by kmethawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putchar(char c, int size)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < size)

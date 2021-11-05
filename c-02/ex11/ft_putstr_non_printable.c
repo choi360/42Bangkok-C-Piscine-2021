@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybayart <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/06 03:06:20 by ybayart           #+#    #+#             */
-/*   Updated: 2019/08/06 03:06:28 by ybayart          ###   ########.fr       */
+/*   Created: 2021/11/05 13:57:55 by kmethawa          #+#    #+#             */
+/*   Updated: 2021/11/05 13:58:00 by kmethawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ void	ft_put_hexa(int c, int err)
 
 void	ft_putstr_non_printable(char *str)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;

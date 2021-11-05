@@ -6,7 +6,7 @@
 /*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 22:22:17 by kmethawa          #+#    #+#             */
-/*   Updated: 2021/11/04 22:32:03 by kmethawa         ###   ########.fr       */
+/*   Updated: 2021/11/05 14:07:42 by kmethawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,16 @@ int	main(void)
 	printf("%s\n", ft_strstr(str, to_find));
 	printf("%s\n", strstr(str, to_find));
 	to_find = "";
-        printf("%s\n", ft_strstr(str, to_find));
-        printf("%s\n", strstr(str, to_find));
+	printf("%s\n", ft_strstr(str, to_find));
+	printf("%s\n", strstr(str, to_find));
 	to_find = "onj";
-        printf("%s\n", ft_strstr(str, to_find));
-        printf("%s\n", strstr(str, to_find));
+	printf("%s\n", ft_strstr(str, to_find));
+	printf("%s\n", strstr(str, to_find));
 	to_find = " l";
-        printf("%s\n", ft_strstr(str, to_find));
-        printf("%s\n", strstr(str, to_find));
+	printf("%s\n", ft_strstr(str, to_find));
+	printf("%s\n", strstr(str, to_find));
 	to_find = "x";
-        printf("%s\n", ft_strstr(str, to_find));
-        printf("%s\n", strstr(str, to_find));
+	printf("%s\n", ft_strstr(str, to_find));
+	printf("%s\n", strstr(str, to_find));
 	return (0);
 }
