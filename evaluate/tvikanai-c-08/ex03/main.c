@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ssurabut <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tvikanai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/31 00:21:27 by ssurabut          #+#    #+#             */
-/*   Updated: 2021/10/31 00:21:30 by ssurabut         ###   ########.fr       */
+/*   Created: 2021/11/05 14:42:12 by tvikanai          #+#    #+#             */
+/*   Updated: 2021/11/05 14:44:16 by tvikanai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "ft_point.h"
 
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
+void	set_point(t_point *point)
 {
-	char	*d;
+	point->x = 42;
+	point->y = 21;
+}
 
-	d = dest;
-	while (*d != '\0')
-		d++;
-	while (*src != '\0' && nb > 0)
-	{
-		*d = *(unsigned char *)src;
-		d++;
-		src++;
-		nb--;
-	}
-	*d = '\0';
-	return (dest);
+int	main(void)
+{
+	t_point	point;
+
+	set_point(&point);
+	return (0);
 }

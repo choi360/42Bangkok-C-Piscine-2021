@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vchancha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/06 20:34:59 by kmethawa          #+#    #+#             */
-/*   Updated: 2021/11/06 20:35:12 by kmethawa         ###   ########.fr       */
+/*   Created: 2021/11/05 15:00:17 by vchancha          #+#    #+#             */
+/*   Updated: 2021/11/05 15:03:22 by vchancha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_sort_int_tab(int *tab, int size)
-{	
-	int	i;
-	int	tmp;
-
-	i = 0;
-	while (i < size - 1)
-	{
-		if (tab[i + 1] < tab[i])
-		{
-			tmp = tab[i];
-			tab[i] = tab[i + 1];
-			tab[i + 1] = tmp;
-			ft_sort_int_tab(tab, size);
-		}
-		i++;
-	}
+int	ft_fibonacci(int index)
+{
+	if (index < 0)
+		return (-1);
+	if (index < 2)
+		return (index);
+	return (ft_fibonacci(index - 2) + ft_fibonacci(index - 1));
 }

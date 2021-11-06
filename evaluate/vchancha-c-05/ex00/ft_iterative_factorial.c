@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vchancha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/06 20:34:59 by kmethawa          #+#    #+#             */
-/*   Updated: 2021/11/06 20:35:12 by kmethawa         ###   ########.fr       */
+/*   Created: 2021/11/05 14:31:29 by vchancha          #+#    #+#             */
+/*   Updated: 2021/11/05 14:34:19 by vchancha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_sort_int_tab(int *tab, int size)
-{	
-	int	i;
-	int	tmp;
+int	ft_iterative_factorial(int nb)
+{
+	int	factorial;
+	int	index;
 
-	i = 0;
-	while (i < size - 1)
-	{
-		if (tab[i + 1] < tab[i])
-		{
-			tmp = tab[i];
-			tab[i] = tab[i + 1];
-			tab[i + 1] = tmp;
-			ft_sort_int_tab(tab, size);
-		}
-		i++;
-	}
+	if (nb < 0)
+		return (0);
+	index = 1;
+	factorial = 1;
+	while (index < nb + 1)
+		factorial = factorial * index++;
+	return (factorial);
 }

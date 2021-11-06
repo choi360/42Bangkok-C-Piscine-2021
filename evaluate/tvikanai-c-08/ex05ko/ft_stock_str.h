@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*   ft_stock_str.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tvikanai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/06 20:34:59 by kmethawa          #+#    #+#             */
-/*   Updated: 2021/11/06 20:35:12 by kmethawa         ###   ########.fr       */
+/*   Created: 2021/11/05 14:50:11 by tvikanai          #+#    #+#             */
+/*   Updated: 2021/11/05 19:06:30 by tvikanai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_sort_int_tab(int *tab, int size)
-{	
-	int	i;
-	int	tmp;
+#ifndef FT_STOCK_STR_H
+# define FT_STOCK_STR_H
 
-	i = 0;
-	while (i < size - 1)
-	{
-		if (tab[i + 1] < tab[i])
-		{
-			tmp = tab[i];
-			tab[i] = tab[i + 1];
-			tab[i + 1] = tmp;
-			ft_sort_int_tab(tab, size);
-		}
-		i++;
-	}
-}
+typedef struct s_stock_str
+{
+	int		size;
+	char	*str;
+	char	*copy;
+
+}	t_stock_str;
+
+#endif

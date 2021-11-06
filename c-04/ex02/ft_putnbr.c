@@ -1,30 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/06 20:34:59 by kmethawa          #+#    #+#             */
-/*   Updated: 2021/11/06 20:35:12 by kmethawa         ###   ########.fr       */
+/*   Created: 2021/11/06 21:16:20 by kmethawa          #+#    #+#             */
+/*   Updated: 2021/11/06 22:23:36 by kmethawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_sort_int_tab(int *tab, int size)
-{	
-	int	i;
-	int	tmp;
+#include <unistd.h>
 
-	i = 0;
-	while (i < size - 1)
-	{
-		if (tab[i + 1] < tab[i])
-		{
-			tmp = tab[i];
-			tab[i] = tab[i + 1];
-			tab[i + 1] = tmp;
-			ft_sort_int_tab(tab, size);
-		}
-		i++;
-	}
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
 }
+
+void	ft_putnbr(int nb)
+{
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		nb = -nb;
+	}
+	if (nb > 9)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
+	else
+		ft_putchar(nb + '0');
+}
+/*
+int	main(void)
+{
+	ft_putnbr(-214748368);
+	return (0);
+}*/

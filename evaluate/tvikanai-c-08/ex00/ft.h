@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ssurabut <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tvikanai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/30 14:53:16 by ssurabut          #+#    #+#             */
-/*   Updated: 2021/10/30 23:58:32 by ssurabut         ###   ########.fr       */
+/*   Created: 2021/11/04 21:03:16 by tvikanai          #+#    #+#             */
+/*   Updated: 2021/11/05 18:53:21 by tvikanai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#ifndef FT_H
+# define FT_H
 
-int	ft_strcmp(char *s1, char *s2)
-{
-	while (*s1++ == *s2++)
-		if (*s1 == '\0' && *s2 == '\0')
-			return (0);
-	return (*--s1 - *--s2);
-}
+void	ft_putchar(char c);
+void	ft_swap(int *a, int *b);
+void	ft_putstr(char *str);
+int		ft_strlen(char *str);
+int		ft_strcmp(char *s1, char *s2);
+
+#endif

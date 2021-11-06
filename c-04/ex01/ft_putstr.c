@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ssurabut <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/31 00:32:35 by ssurabut          #+#    #+#             */
-/*   Updated: 2021/10/31 00:32:37 by ssurabut         ###   ########.fr       */
+/*   Created: 2021/11/06 21:10:40 by kmethawa          #+#    #+#             */
+/*   Updated: 2021/11/06 22:21:47 by kmethawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-char	*ft_strcat(char *dest, char *src)
+void	ft_putstr(char *str)
 {
-	char	*d;
-
-	d = dest;
-	while (*d != '\0')
-		d++;
-	while (*src != '\0')
-	{
-		*d = *(unsigned char *)src;
-		d++;
-		src++;
-	}
-	*d = '\0';
-	return (dest);
+	while (*str)
+		write(1, str++, 1);
 }
+/*
+int	main(void)
+{
+	ft_putstr("Hello World.\n");
+	return (0);
+}*/
