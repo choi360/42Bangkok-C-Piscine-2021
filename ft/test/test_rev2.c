@@ -13,7 +13,7 @@ char	*ft_rev_print(char *str)
 
 int	main(void)
 {
-	ft_rev_print("xxxx");
+	ft_rev_print("test");
 	putchar('\n');
 	return (0);
 }
