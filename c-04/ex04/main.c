@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmethawa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/06 21:10:40 by kmethawa          #+#    #+#             */
-/*   Updated: 2021/11/08 17:06:36 by kmethawa         ###   ########.fr       */
+/*   Created: 2021/11/08 16:03:26 by kmethawa          #+#    #+#             */
+/*   Updated: 2021/11/08 16:11:10 by kmethawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <limits.h>
 
-void	ft_putstr(char *str)
-{
-	while (*str)
-		write(1, str++, 1);
-}
-/*
+void	ft_putnbr_base(int nbr, char *base);
+
 int	main(void)
 {
-	ft_putstr("Hello World.\n");
-	return (0);
-}*/
+	int	nbr;
+
+	nbr = INT_MIN;
+	ft_putnbr_base(nbr, "01");
+}
